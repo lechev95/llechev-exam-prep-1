@@ -41,7 +41,9 @@ jobs:
         cache: 'npm'
     - name: Install npm dependencies
       run: npm install    
-    - name: Run tests
-      run: npm run test:unit
-    - name: Display softuni username
-      run: echo "llechev"
+    - name: Install Playwright
+      run: npx playwright install
+    - name: Start App
+      run: npm run start &
+    - name: Run UI tests
+      run: npm run test:ui
